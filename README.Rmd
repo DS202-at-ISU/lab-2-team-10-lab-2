@@ -19,6 +19,14 @@ All submissions to the github repo will be automatically uploaded for grading on
 # Lab Report
 
 ### Step 1 Result
+```{r}
+library(classdata)
+
+head(ames, 5)
+summary(ames)
+str(ames)
+```
+
 
 ### Step 2 Result
 
