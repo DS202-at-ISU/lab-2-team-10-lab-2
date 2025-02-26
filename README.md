@@ -161,6 +161,41 @@ some correlation with Sale Price.
 
 ### Step 3 Result
 
+``` r
+library(classdata)
+library(ggplot2)
+
+#summary(ames)
+
+#ames$`Sale Price`
+
+hist <- ggplot(ames, aes(x=log(`Sale Price`))) + geom_histogram(binwidth=.1) + ggtitle("Histogram for Sale Price of Residential Sales in Ames")  + labs(x="Sale Price")
+hist
+```
+
+    ## Warning: Removed 2206 rows containing non-finite outside the scale range
+    ## (`stat_bin()`).
+
+![](README_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+
+``` r
+#range(ames$`Sale Price`)
+```
+
+The range of the variable is 0 to 20,500,000 with 0 as the minimum and
+20,500,000 as the maximum.
+
+As you can see, the histograms most common values are from about 12-13
+on the log scale. If we wanted to look at the numerical values for Sale
+Price I would estimate (since our x values are measured in log(Sale
+Price)) that it would fall between about 162,755 dollars and about
+442,413 dollars.
+
+As for oddities, I think it’s strange that for some houses the sale
+price is 0. I also think that there are some very high values as
+outliers, to the right of the largest part of the histogram, especially
+considering how many of these outliers there are.
+
 ### Step 4 Result
 
 ``` r
@@ -187,4 +222,4 @@ ggplot(data = ames, aes(x = `Sale Price`, y = YearBuilt)) +
     ## Warning: Removed 447 rows containing missing values or values outside the scale range
     ## (`geom_point()`).
 
-![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
