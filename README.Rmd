@@ -19,6 +19,7 @@ All submissions to the github repo will be automatically uploaded for grading on
 # Lab Report
 
 ### Step 1 Result
+
 ```{r}
 library(classdata)
 library(tidyverse)
@@ -29,12 +30,39 @@ summary(ames)
 str(ames)
 ```
 
+Variables:
+
+1. Parcel ID (chr) - An unique ID
+2. Address (chr) - Address of property
+3. Style (Factor) - Number of stories
+4. Occupancy (Factor) - Type of property
+5. Sale Date (Date) - Date of sale
+6. Sale Price (num) - Sale price
+7. Multi Sale (chr) - Multiple sales
+8. YearBuilt (num) - The year it was built
+9. Acres (num) - Acres of the property
+10. TotalLivingArea (sf) (num) - Total living area of property
+11. Bedrooms (num) - Number of bedrooms
+12. FinishedBsmtArea (sf) (num) - Basement area
+13. LotArea (sf) (num) - Lot area
+14. AC (chr) - Availability of AC
+15. FirePlace (chr) - Availability of fire place
+16. Neighborhood (Factor) - Neighborhood it belong in
+
+Variables with chr type have no restriction in data range, could be any string or they could be categorical data.
+
+Variables with Date type has a format of year-month-date
+
+Variables with num type have an infinite data range of any number
+
+Varibles with Factor type have categorical data stored on different levels of a data structure but no restriction on number of levels
 
 ### Step 2 Result
 
 ### Step 3 Result
 
 ### Step 4 Result
+<<<<<<< HEAD
 ``` {r}
 df <- df['Price']
 df['Price'] <- ames['Sale Price']
@@ -44,5 +72,13 @@ head(df)
 ggplot(df, aes(x=SqFtLiving)) +
   geom_histogram(binwidth = 100)
 ggplot(df, aes(x=SqFtLiving, y=log(Price))) +
+=======
+
+Hong Hao's work:YearBuilt vs Sale Price
+```{r}
+library(ggplot2)
+
+ggplot(data = ames, aes(x = `Sale Price`, y = YearBuilt)) +
+>>>>>>> b990b4fe3c5ce6598d64fdafd73f8d506d935108
   geom_point()
 ```
