@@ -155,6 +155,7 @@ levels of a data structure but no restriction on number of levels
 ### Step 2 Result
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ### Step 3 Result
 
 ### Step 4 Result
@@ -189,6 +190,8 @@ ggplot(df, aes(x=SqFtLiving, y=log(Price))) +
 
 # ![](README_files/figure-gfm/unnamed-chunk-2-2.png)<!-- -->
 =======
+=======
+>>>>>>> 5622e974afc9391b83d7b7e0c7a72be67de70931
 The variable of special interest is Sale Price. When exploring various
 relationships with other variables, Sale Price seems to result in the
 most correlation. Living Area, Year Built, and Neighborhood seem to have
@@ -244,6 +247,9 @@ considering how many of these outliers there are.
 # ggplot(df, aes(x=SqFtLiving, y=log(Price))) +
 #   geom_point()
 ```
+<<<<<<< HEAD
+>>>>>>> 5622e974afc9391b83d7b7e0c7a72be67de70931
+=======
 >>>>>>> 5622e974afc9391b83d7b7e0c7a72be67de70931
 
 Hong Hao’s work:YearBuilt vs Sale Price
@@ -253,7 +259,10 @@ library(ggplot2)
 
 ggplot(data = ames, aes(x = `Sale Price`, y = YearBuilt)) +
 <<<<<<< HEAD
+<<<<<<< HEAD
 #>>>>>>> b990b4fe3c5ce6598d64fdafd73f8d506d935108
+=======
+>>>>>>> 5622e974afc9391b83d7b7e0c7a72be67de70931
 =======
 >>>>>>> 5622e974afc9391b83d7b7e0c7a72be67de70931
   geom_point()
@@ -263,8 +272,11 @@ ggplot(data = ames, aes(x = `Sale Price`, y = YearBuilt)) +
     ## (`geom_point()`).
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
 =======
+=======
+>>>>>>> 5622e974afc9391b83d7b7e0c7a72be67de70931
 ![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 Kaitlyn’s work: Bedrooms
@@ -274,4 +286,7 @@ Kaitlyn’s work: Bedrooms
 #what is the range of that variable? plot. describe the pattern.
 #what is the relationship to the main variable? plot a scatterplot, boxplot or facetted barcharts (dependening on the types of variables involved). Describe overall pattern, does this variable describe any oddities discovered in 3? Identify/follow-up on any oddities.
 ```
+<<<<<<< HEAD
+>>>>>>> 5622e974afc9391b83d7b7e0c7a72be67de70931
+=======
 >>>>>>> 5622e974afc9391b83d7b7e0c7a72be67de70931
