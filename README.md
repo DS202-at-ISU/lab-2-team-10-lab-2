@@ -223,3 +223,11 @@ ggplot(data = ames, aes(x = `Sale Price`, y = YearBuilt)) +
     ## (`geom_point()`).
 
 ![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+
+Kaitlyn’s work: Bedrooms
+
+``` r
+# Include at least one plot that describes the relationship between sales prices and your variable. Include one paragraph describing the pattern you see. Are there oddities? Follow-up on (some of) them.
+#what is the range of that variable? plot. describe the pattern.
+#what is the relationship to the main variable? plot a scatterplot, boxplot or facetted barcharts (dependening on the types of variables involved). Describe overall pattern, does this variable describe any oddities discovered in 3? Identify/follow-up on any oddities.
+```

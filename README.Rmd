@@ -101,10 +101,19 @@ As for oddities, I think it's strange that for some houses the sale price is 0. 
 ```
 
   
-Hong Hao's work:YearBuilt vs Sale Price
+Hong Hao's work:YearBuilt vs Sale Price  
 ```{r}
 library(ggplot2)
 
 ggplot(data = ames, aes(x = `Sale Price`, y = YearBuilt)) +
   geom_point()
+```
+
+Kaitlyn's work: Bedrooms
+```{r}
+
+# Include at least one plot that describes the relationship between sales prices and your variable. Include one paragraph describing the pattern you see. Are there oddities? Follow-up on (some of) them.
+#what is the range of that variable? plot. describe the pattern.
+#what is the relationship to the main variable? plot a scatterplot, boxplot or facetted barcharts (dependening on the types of variables involved). Describe overall pattern, does this variable describe any oddities discovered in 3? Identify/follow-up on any oddities.
+
 ```
