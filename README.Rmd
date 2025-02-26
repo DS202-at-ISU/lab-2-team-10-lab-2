@@ -29,6 +29,7 @@ str(ames)
 
 
 ### Step 2 Result
+The variable of special interest is Sale Price. When exploring various relationships with other variables, Sale Price seems to result in the most correlation. Living Area, Year Built, and Neighborhood seem to have some correlation with Sale Price.
 
 ### Step 3 Result
 
