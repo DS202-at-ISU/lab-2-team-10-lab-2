@@ -65,23 +65,24 @@ The variable of special interest is Sale Price. When exploring various relations
 ### Step 3 Result
 
 ### Step 4 Result
-<<<<<<< HEAD
-``` {r}
-df <- df['Price']
-df['Price'] <- ames['Sale Price']
-df['SqFtLiving'] <- ames['TotalLivingArea (sf)']
-df <- drop_na(df)
-head(df)
-ggplot(df, aes(x=SqFtLiving)) +
-  geom_histogram(binwidth = 100)
-ggplot(df, aes(x=SqFtLiving, y=log(Price))) +
-=======
 
+``` {r}
+# df <- df['Price']
+# df['Price'] <- ames['Sale Price']
+# df['SqFtLiving'] <- ames['TotalLivingArea (sf)']
+# df <- drop_na(df)
+# head(df)
+# ggplot(df, aes(x=SqFtLiving)) +
+#   geom_histogram(binwidth = 100)
+# ggplot(df, aes(x=SqFtLiving, y=log(Price))) +
+#   geom_point()
+```
+
+  
 Hong Hao's work:YearBuilt vs Sale Price
 ```{r}
 library(ggplot2)
 
 ggplot(data = ames, aes(x = `Sale Price`, y = YearBuilt)) +
->>>>>>> b990b4fe3c5ce6598d64fdafd73f8d506d935108
   geom_point()
 ```
