@@ -31,15 +31,15 @@ str(ames)
 Variables:
 
 1. Parcel ID (chr) - An unique ID
-2. Address (chr) - Address of residence
+2. Address (chr) - Address of property
 3. Style (Factor) - Number of stories
-4. Occupancy (Factor) - Type of residence
+4. Occupancy (Factor) - Type of property
 5. Sale Date (Date) - Date of sale
 6. Sale Price (num) - Sale price
 7. Multi Sale (chr) - Multiple sales
 8. YearBuilt (num) - The year it was built
-9. Acres (num) - Acres of the residence
-10. TotalLivingArea (sf) (num) - Total living area of residence
+9. Acres (num) - Acres of the property
+10. TotalLivingArea (sf) (num) - Total living area of property
 11. Bedrooms (num) - Number of bedrooms
 12. FinishedBsmtArea (sf) (num) - Basement area
 13. LotArea (sf) (num) - Lot area
@@ -60,3 +60,11 @@ Varibles with Factor type have categorical data stored on different levels of a 
 ### Step 3 Result
 
 ### Step 4 Result
+
+Hong Hao's work:YearBuilt vs Sale Price
+```{r}
+library(ggplot2)
+
+ggplot(data = ames, aes(x = `Sale Price`, y = YearBuilt)) +
+  geom_point()
+```
