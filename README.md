@@ -188,3 +188,9 @@ ggplot(data = ames, aes(x = `Sale Price`, y = YearBuilt)) +
     ## (`geom_point()`).
 
 ![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
+Jenna Whalen:
+
+``` r
+library(ggplot2)
+```
