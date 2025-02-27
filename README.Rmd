@@ -88,7 +88,7 @@ ggplot(data = ames, aes(x = `Sale Price`, y = YearBuilt)) +
 ```
 
 Jenna Whalen:
-```{r, message = FALSE}
+```{r}
 library(ggplot2)
 
 ggplot(data = ames, aes(x = Neighborhood, y = `Sale Price`)) +
