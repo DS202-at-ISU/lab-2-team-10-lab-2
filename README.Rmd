@@ -61,10 +61,21 @@ Varibles with Factor type have categorical data stored on different levels of a 
 
 ### Step 4 Result
 
-Hong Hao's work:YearBuilt vs Sale Price
+Hong Hao's work: YearBuilt vs Sale Price
 ```{r}
 library(ggplot2)
 
-ggplot(data = ames, aes(x = `Sale Price`, y = YearBuilt)) +
-  geom_point()
+ames_clean <- subset(ames, !is.na(ames$`Sale Price`) & !is.na(ames$YearBuilt))
+ames_clean$`Sale Price` <- as.numeric(ames_clean$`Sale Price`)
+ames_clean$YearBuilt <- as.numeric(ames_clean$YearBuilt)
+
+ames_clean <- subset(ames_clean, `Sale Price` < 3000000)
+ames_clean <- subset(ames_clean, YearBuilt >= 1800)
+
+ggplot(ames_clean, aes(x = `Sale Price`, y = YearBuilt)) +
+  geom_point(alpha = 0.5) +
+  scale_x_continuous(labels = scales::comma)
+
 ```
+
+This is a scatterplot showing the relation between YearBuilt and Sale Price. The YearBuilt data range from 1880 and onward, Sale Price range from 0 to millions. We can see from the plot that there is a slight trend of average properties' price increasing as the year progresses closer to the present. While creating the plot, there were 2 Sale Price outliers that have price above 10 million and 1 YearBuilt outlier which is at 0. These outliers were cleaned out of the data in order to see the trend. 
