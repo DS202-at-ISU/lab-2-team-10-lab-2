@@ -86,3 +86,10 @@ library(ggplot2)
 ggplot(data = ames, aes(x = `Sale Price`, y = YearBuilt)) +
   geom_point()
 ```
+
+Jenna Whalen:
+```{r}
+library(ggplot2)
+
+ggplot(data = ames, aes(x = Neighborhood, y = `Sale Price`)) +
+  geom_bar()
