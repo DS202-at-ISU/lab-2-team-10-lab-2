@@ -63,29 +63,65 @@ The variable of special interest is Sale Price. When exploring various relations
 
 
 ### Step 3 Result
+```{r, message=FALSE}
+
+library(classdata)
+library(ggplot2)
+
+#summary(ames)
+
+#ames$`Sale Price`
+
+hist <- ggplot(ames, aes(x=log(`Sale Price`))) + geom_histogram(binwidth=.1) + ggtitle("Histogram for Sale Price of Residential Sales in Ames")  + labs(x="Sale Price")
+hist
+
+#range(ames$`Sale Price`)
+
+```
+
+The range of the variable is 0 to 20,500,000 with 0 as the minimum and 20,500,000 as the maximum.
+
+As you can see, the histograms most common values are from about 12-13 on the log scale.
+If we wanted to look at the numerical values for Sale Price I would estimate (since our x values are measured in log(Sale Price)) that it would fall between about 162,755 dollars and about 442,413 dollars.
+
+As for oddities, I think it's strange that for some houses the sale price is 0. I also think that there are some very high values as outliers, to the right of the largest part of the histogram, especially considering how many of these outliers there are. 
 
 ### Step 4 Result
 
+Nadia's work:
+  I selected the square feet of living area. Based on the histogram, it appers the data are slightly right-skewed, and that square footage around 1000-1500 is most common. I decided to drop rows with NA values, or those with price or square footage listed as 0, as these were likely errors. After making a scatterplot, I saw that there was only a small positive correlation between price and size, which surprised me. I also noticed that there were a few houses with prices so high that it made the plot difficult to read, so I ran the prices through a log function first.
+
 ``` {r}
-# df <- df['Price']
-# df['Price'] <- ames['Sale Price']
-# df['SqFtLiving'] <- ames['TotalLivingArea (sf)']
-# df <- drop_na(df)
-# head(df)
-# ggplot(df, aes(x=SqFtLiving)) +
-#   geom_histogram(binwidth = 100)
-# ggplot(df, aes(x=SqFtLiving, y=log(Price))) +
-#   geom_point()
+#Nadia
+df <- ames['TotalLivingArea (sf)']
+df['Price'] <- ames['Sale Price']
+df['SqFtLiving'] <- ames['TotalLivingArea (sf)']
+df <- drop_na(df)
+df <- filter(df, Price>0, SqFtLiving>0)
+ggplot(df, aes(x=SqFtLiving)) +
+  geom_histogram(binwidth = 100)
+ggplot(df, aes(x=SqFtLiving, y=log(Price))) +
+  geom_point()
+
 ```
 
-  
-Hong Hao's work:YearBuilt vs Sale Price
+Hong Hao's work: YearBuilt vs Sale Price
 ```{r}
 library(ggplot2)
 
-ggplot(data = ames, aes(x = `Sale Price`, y = YearBuilt)) +
-  geom_point()
+ames_clean <- subset(ames, !is.na(ames$`Sale Price`) & !is.na(ames$YearBuilt))
+ames_clean$`Sale Price` <- as.numeric(ames_clean$`Sale Price`)
+ames_clean$YearBuilt <- as.numeric(ames_clean$YearBuilt)
+
+ames_clean <- subset(ames_clean, `Sale Price` < 3000000)
+ames_clean <- subset(ames_clean, YearBuilt >= 1800)
+
+ggplot(ames_clean, aes(x = `Sale Price`, y = YearBuilt)) +
+  geom_point(alpha = 0.5) +
+  scale_x_continuous(labels = scales::comma)
+
 ```
+
 
 Jenna Whalen:
 ```{r}
@@ -93,3 +129,16 @@ library(ggplot2)
 
 ggplot(data = ames, aes(x = Neighborhood, y = `Sale Price`)) +
   geom_bar()
+
+This is a scatterplot showing the relation between YearBuilt and Sale Price. The YearBuilt data range from 1880 and onward, Sale Price range from 0 to millions. We can see from the plot that there is a slight trend of average properties' price increasing as the year progresses closer to the present. While creating the plot, there were 2 Sale Price outliers that have price above 10 million and 1 YearBuilt outlier which is at 0. These outliers were cleaned out of the data in order to see the trend. 
+
+Kaitlyn's work: Bedrooms
+```{r}
+
+# Include at least one plot that describes the relationship between sales prices and your variable. Include one paragraph describing the pattern you see. Are there oddities? Follow-up on (some of) them.
+#what is the range of that variable? plot. describe the pattern.
+#what is the relationship to the main variable? plot a scatterplot, boxplot or facetted barcharts (dependening on the types of variables involved). Describe overall pattern, does this variable describe any oddities discovered in 3? Identify/follow-up on any oddities.
+
+```
+
+
