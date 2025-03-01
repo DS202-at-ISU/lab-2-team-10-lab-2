@@ -245,26 +245,6 @@ ggplot(ames_clean, aes(x = `Sale Price`, y = YearBuilt)) +
   scale_x_continuous(labels = scales::comma)
 ```
 
-<<<<<<< HEAD
-    ## Warning: Removed 447 rows containing missing values or values outside the scale range
-    ## (`geom_point()`).
-
-<<<<<<< HEAD
-<<<<<<< HEAD
-![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
-<<<<<<< HEAD
-
-Jenna Whalen:
-
-``` r
-library(ggplot2)
-```
-=======
-=======
-=======
->>>>>>> 5622e974afc9391b83d7b7e0c7a72be67de70931
-=======
->>>>>>> refs/remotes/origin/main
 ![](README_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
 
 This is a scatterplot showing the relation between YearBuilt and Sale
@@ -287,14 +267,6 @@ df2 <- drop_na(df2)
 ggplot(df2, aes(x = `Acres`, y = log(`Sale Price`))) +
   geom_point(alpha = .1)
 ```
-<<<<<<< HEAD
-<<<<<<< HEAD
->>>>>>> 5622e974afc9391b83d7b7e0c7a72be67de70931
-=======
->>>>>>> 5622e974afc9391b83d7b7e0c7a72be67de70931
->>>>>>> a54c20f6749e22c7e556328dc0bb1e6ec05077a5
->>>>>>> refs/remotes/origin/main
-=======
 
 ![](README_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
 
@@ -321,4 +293,5 @@ I found these outliers to be strange, as I’d imagine acreage is
 generally quite valuable, but I don’t know the full details of the
 sale.  
 This doesn’t describe the outliers in question 3.
->>>>>>> refs/remotes/origin/main
+
+Jenna Whalen:
