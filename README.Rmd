@@ -58,7 +58,8 @@ Variables with num type have an infinite data range of any number
 Varibles with Factor type have categorical data stored on different levels of a data structure but no restriction on number of levels
 
 ### Step 2 Result
-The variable of special interest is Sale Price. When exploring various relationships with other variables, Sale Price seems to result in the most correlation. Living Area, Year Built, and Neighborhood seem to have some correlation with Sale Price.
+
+The variable of special interest is Sale Price. When exploring various relationships with other variables, Sale Price seems to result in the most correlation. Living Area, Year Built, and Neighborhood seem to have some correlation with Sale Price. We think there might be a correlation between Sale Price and acreage as well. 
 
 
 
@@ -71,7 +72,6 @@ library(ggplot2)
 #summary(ames)
 
 #ames$`Sale Price`
-
 hist <- ggplot(ames, aes(x=log(`Sale Price`))) + geom_histogram(binwidth=.1) + ggtitle("Histogram for Sale Price of Residential Sales in Ames")  + labs(x="Sale Price")
 hist
 
@@ -122,6 +122,7 @@ ggplot(ames_clean, aes(x = `Sale Price`, y = YearBuilt)) +
 
 ```
 
+<<<<<<< HEAD
 
 Jenna Whalen:
 ```{r}
@@ -131,14 +132,32 @@ ggplot(data = ames, aes(x = Neighborhood, y = `Sale Price`)) +
   geom_bar()
 
 This is a scatterplot showing the relation between YearBuilt and Sale Price. The YearBuilt data range from 1880 and onward, Sale Price range from 0 to millions. We can see from the plot that there is a slight trend of average properties' price increasing as the year progresses closer to the present. While creating the plot, there were 2 Sale Price outliers that have price above 10 million and 1 YearBuilt outlier which is at 0. These outliers were cleaned out of the data in order to see the trend. 
+=======
+This is a scatterplot showing the relation between YearBuilt and Sale Price. The YearBuilt data range from 1880 and onward, Sale Price range from 0 to millions. We can see from the plot that there is a slight trend of average properties' price increasing as the year progresses closer to the present. While creating the plot, there were 2 Sale Price outliers that have price above 10 million and 1 YearBuilt outlier which is at 0. These outliers were cleaned out of the data in order to see the trend.   
+>>>>>>> refs/remotes/origin/main
 
-Kaitlyn's work: Bedrooms
+
+Kaitlyn's work: Acres
 ```{r}
 
-# Include at least one plot that describes the relationship between sales prices and your variable. Include one paragraph describing the pattern you see. Are there oddities? Follow-up on (some of) them.
-#what is the range of that variable? plot. describe the pattern.
-#what is the relationship to the main variable? plot a scatterplot, boxplot or facetted barcharts (dependening on the types of variables involved). Describe overall pattern, does this variable describe any oddities discovered in 3? Identify/follow-up on any oddities.
+df2 <- ames['Acres']
+df2['Sale Price'] <- ames['Sale Price']
+df2['Acres'] <- ames['Acres']
+df2 <- drop_na(df2)
 
+ggplot(df2, aes(x = `Acres`, y = log(`Sale Price`))) +
+  geom_point(alpha = .1)
+
+range(df2$`Acres`)
 ```
+<<<<<<< HEAD
 
 
+=======
+This is a scatterplot showing the relationship between Sales Price and Acreage.   
+The range of Acres is 0.000 to 12.012.
+It doesn't seem like there is much of a pattern between Acres and Sales Price, which I found surprising. As you can see in the scatterplot, the majority of sales have low acreage and relatively low prices. The spaces with darker blobs have more data points, controlled by the alpha value.   
+If there was a strong relationship, we should have seen some sort of strong visible trend line, but in this graph we really just have a large blob of points, with a few points heading straight out and then outliers.   
+There are a few outliers, with very low acreage and very high Sales Price, and with high acreage and low Sales Price for that much acreage. I found these outliers to be strange, as I'd imagine acreage is generally quite valuable, but I don't know the full details of the sale.   
+This doesn't describe the outliers in question 3. 
+>>>>>>> refs/remotes/origin/main
