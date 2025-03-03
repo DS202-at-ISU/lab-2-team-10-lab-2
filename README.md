@@ -294,4 +294,20 @@ generally quite valuable, but I don’t know the full details of the
 sale.  
 This doesn’t describe the outliers in question 3.
 
-Jenna Whalen:
+Jenna Whalen: Neighborhood
+
+``` r
+df1 <- ames['Neighborhood']
+df1['Sale Price'] <- ames['Sale Price'] 
+df1 <- drop_na(df1)
+
+ggplot(df1, 
+       aes(x = Neighborhood, y = log(`Sale Price`))
+       ) +
+  geom_col()
+```
+
+    ## Warning: Removed 2206 rows containing missing values or values outside the scale range
+    ## (`geom_col()`).
+
+![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->

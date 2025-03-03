@@ -146,5 +146,15 @@ There are a few outliers, with very low acreage and very high Sales Price, and w
 This doesn't describe the outliers in question 3.   
 
 
-Jenna Whalen:  
+Jenna Whalen: Neighborhood
 
+```{r}
+df1 <- ames['Neighborhood']
+df1['Sale Price'] <- ames['Sale Price'] 
+df1 <- drop_na(df1)
+
+ggplot(df1, 
+       aes(x = Neighborhood, y = log(`Sale Price`))
+       ) +
+  geom_col()
+```
