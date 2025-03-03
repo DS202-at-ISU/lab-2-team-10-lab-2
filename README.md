@@ -301,13 +301,23 @@ df1 <- ames['Neighborhood']
 df1['Sale Price'] <- ames['Sale Price'] 
 df1 <- drop_na(df1)
 
-ggplot(df1, 
-       aes(x = Neighborhood, y = log(`Sale Price`))
-       ) +
-  geom_col()
+ggplot(df1, aes(x = Neighborhood, y = log(`Sale Price`))) +
+  geom_boxplot() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1))
 ```
 
-    ## Warning: Removed 2206 rows containing missing values or values outside the scale range
-    ## (`geom_col()`).
+    ## Warning: Removed 2206 rows containing non-finite outside the scale range
+    ## (`stat_boxplot()`).
 
 ![](README_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+
+I created a boxplot comparing the sale price of houses with what
+neighborhood they are located in. The average sale price of a house
+seems to be pretty consistently located around \$1.25 million. The one
+outlier of the Neighborhoods is Lincoln Way-Duff, with the average
+selling price being much higher, around \$1.75 million. The range of
+prices is from just under \$500,000 in the Briardale residential
+neighborhood to around 1.75 mil in Lincoln way-Duff. This does reflect
+some of the outliers described in 3 with some variables having a value
+of 0 or being fairly low in comparison to the average, specifically in
+the North Ridge Hei Neighborhood.
